@@ -408,7 +408,7 @@ nav .nav-item a:hover::after
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    left: 80px;
+    left: 135px;
     position: absolute;
     bottom: -55px;
     z-index: 99;
