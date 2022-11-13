@@ -49,6 +49,7 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: var(--main-color); 
   }
+
 ul {
     list-style: none;
     margin: 0;
@@ -2224,13 +2225,18 @@ ul.list.text {
         position: relative;
         top: 70px;
     }
-    .testmonial .swiper-slide.swiper-slide-active img {
+    /* .testmonial .swiper-slide.swiper-slide-active img {
         object-fit: contain;
         height: 350px !important;
-    }
-    .testmonial .swiper img {
+    } */
+    /* .testmonial .swiper img {
         height: 100%;
         width: 95% !important;
+        object-fit: cover;
+    } */
+    .testmonial .swiper img {
+        height: 350px !important;
+        width: 400px;
         object-fit: cover;
     }
     nav .nav-item a:hover {
