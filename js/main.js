@@ -52,6 +52,10 @@
                 480: {
                     slidesPerView: 1,
                     spaceBetween: 10
+                },
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
                 }
             }
         });
