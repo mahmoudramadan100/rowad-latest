@@ -18,7 +18,7 @@
 body {
     font-family: 'NotoKufiArabic', sans-serif;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     text-align: right;
     direction: rtl;
 }
@@ -86,11 +86,11 @@ button.navbar-toggler {
     font-size: 30px;
     cursor: pointer;
 }
-.header,
+/* .header,
 .testmonial,
 .client {
     width: 103%;
-}
+} */
 /* End globl Rules */
 
 /*=============================================
@@ -272,19 +272,51 @@ nav .nav-item a:hover::after
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
+.header .overlay-contact{
+    background-color: rgba(12, 12, 12, 0.5);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 9;
+}
+.header .swiper-wrapper .slide-1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.header .swiper-wrapper .slide-1 img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .header .swiper-wrapper .slide-2 {
     background-image: url('../img/header.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
-.header .swiper-button-next, .header .swiper-button-prev {
+.header .swiper-button-next,
+.header .swiper-button-prev {
     position: absolute;
     top: 50%;
     width: calc(var(--swiper-navigation-size)/ 44 * 27);
     height: var(--swiper-navigation-size);
     margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
-    z-index: 10;
+    z-index: 999;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -299,7 +331,8 @@ nav .nav-item a:hover::after
 .header .swiper-button-prev:hover {
     background-color: var(--main-color);
 }
-.header .swiper-button-next:after,.header .swiper-button-prev:after {
+.header .swiper-button-next:after,
+.header .swiper-button-prev:after {
     font-family: swiper-icons;
     font-size: var(--swiper-navigation-size);
     text-transform: none!important;
@@ -312,18 +345,19 @@ nav .nav-item a:hover::after
 }
 .header .swiper-button-prev,
 .header .swiper-rtl .swiper-button-next {
-    left: 70px;
+    left: 15px;
     right: auto;
 }
 .header .swiper-button-next, .header .swiper-rtl .swiper-button-prev {
-    right: 40px;
+    right: 15px;
     left: auto;
 }
 /* End Slider */
 .header .swiper-slide .text {
     text-align: right;
-    margin: 5px 60px 0 0px;
-    z-index: 999;
+    margin: 5px 70px 0 0px;
+    z-index: 99;
+    position: relative;
 }
 .header .text h1 {
     color: var(--white-color);
@@ -370,8 +404,8 @@ nav .nav-item a:hover::after
     transition-property: color;
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
-  }
-  .hvr-bounce-to-left:before {
+    }
+.hvr-bounce-to-left:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -391,12 +425,14 @@ nav .nav-item a:hover::after
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
     border-radius: 10px;
-  }
-  .hvr-bounce-to-left:hover, .hvr-bounce-to-left:focus, .hvr-bounce-to-left:active {
+    }
+    .hvr-bounce-to-left:hover, .hvr-bounce-to-left:focus, .hvr-bounce-to-left:active {
     color: white;
     border-radius: 10px;
-  }
-  .hvr-bounce-to-left:hover:before, .hvr-bounce-to-left:focus:before, .hvr-bounce-to-left:active:before {
+    }
+.hvr-bounce-to-left:hover:before,
+.hvr-bounce-to-left:focus:before,
+.hvr-bounce-to-left:active:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
@@ -408,21 +444,21 @@ nav .nav-item a:hover::after
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    left: 135px;
+    left: 0px;
     position: absolute;
     bottom: -55px;
     z-index: 99;
     width: 50%;
     text-align: center;
     display: block;
-    height: 400px;
+    height: 450px;
 }
 .header .wave {
     width: 100%;
     position: absolute;
     bottom: -80px;
     right: 0;
-    z-index: 9; 
+    z-index: 9;
 }
 .header .wave img {
     width: 100%;
@@ -494,7 +530,6 @@ nav .nav-item a:hover::after
 .about .see-more {
     margin: 25px 0;
     text-align: center;
-    font-weight: bold;
 }
 .about .see-more p {
     font-size: 18px;
@@ -515,7 +550,7 @@ nav .nav-item a:hover::after
 =           Start Goals Section            =
 =============================================*/
 .goals {
-    margin: 60px 0 80px;
+    padding: 60px 0 80px;
     text-align: right;
     background-image: url(../img/theView.png);
     background-size: cover;
@@ -523,7 +558,7 @@ nav .nav-item a:hover::after
 }
 
 .goals .content {
-    margin: 10px 0;
+    margin: 20px 0 0;
 }
 .goals .content span {
     color: var(--main-color);
@@ -574,9 +609,16 @@ nav .nav-item a:hover::after
     -moz-box-shadow: -10px 13px 33px -17px rgba(0,0,0,0.53);
 }
 .goals .img {
+    max-width: 400px;
+    max-height: 400px;
+    overflow: hidden;
+    text-align: left;
+    margin: 0 auto;
+}
+.goals .img img {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    object-fit: contain;
 }
  /*=============================================
 =           End Testmonial          =
@@ -671,16 +713,16 @@ nav .nav-item a:hover::after
 =============================================*/
 .client {
     background-color: var(--second-color);
-    margin: 30px 0;
     position: relative;
     top: -65px;
     z-index: 9;
-    padding: 0 0 40px 0;
+    padding: 0 0 20px 0;
     box-shadow: 0px -30px 25px 10px rgb(10 10 53);
 }
 .client .text {   
     text-align: center;
     padding: 20px;
+    margin-bottom: 20px;
 }
 .client .text .fa-quote-left {
     color: var(--white-color);
@@ -1027,15 +1069,15 @@ nav .nav-item a:hover::after
 
 .contact .btn {
     background-color: var(--second-color);
-    height: 55px;
-    width: 230px;
+    height: 45px;
+    width: 150px;
     border-radius: 18px;
-    line-height: 45px;
+    line-height: 25px;
     font-size: 16px;
     position: relative;
     display: block;
     overflow: hidden;
-    margin: 0;
+    margin: 10px 0;
     transition: var(--main-transition);
     -webkit-box-shadow: 0px 0px 13px -1px rgb(0 0 0 / 75%);
     -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
@@ -1072,6 +1114,10 @@ nav .nav-item a:hover::after
 .footer .menu {
     margin: 50px 0;
 }
+.social.menu {
+    text-align: center;
+}
+
 .footer h3 {
     margin: 30px 0 20px;
     font-size: 20px;
@@ -1080,6 +1126,9 @@ nav .nav-item a:hover::after
 }
 .footer .menu .list li {
     margin: 4px 0;
+}
+.social.menu li {
+    margin-bottom: 10px !important;
 }
 .footer .menu .list a {
     text-decoration: none;
@@ -1131,9 +1180,10 @@ ul.list.text {
 
 .footer .copyright {
     background-color: var(--second-color);
-    margin: 10px 0 0;
+    padding: 10px 0;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 .footer .copyright span {
     color: var(--white-color);
@@ -1148,9 +1198,9 @@ ul.list.text {
 }
 
 .scroll-top {
-    position: absolute;
+    position: fixed;
     left: 20px;
-    top: -23px;
+    bottom: 30px;
     background-color: #414648;
     color: var(--white-color);
     cursor: pointer;
@@ -1158,6 +1208,11 @@ ul.list.text {
     line-height: 10px;
     border-radius: 50%;
     border-color: transparent;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
 }
 .scroll-top:focus,
 .scroll-top:hover {
@@ -1171,6 +1226,50 @@ ul.list.text {
     transition: var(--main-transition);
     background-color: var(--main-color);
     color: var(--second-color);
+}
+
+
+/* client arrow */
+
+.client .swiper-button-next:after,
+.client .swiper-button-prev:after {
+    font-family: "Font Awesome 5 Free";
+    font-size: var(--swiper-navigation-size);
+    text-transform: none!important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    font-weight: 900;
+    font-size: 15px;
+}
+.client .swiper-button-prev:after,
+.client .swiper-rtl .swiper-button-next:after {
+    content: '\f053';
+}
+.client .swiper-button-next:after,
+.client .swiper-rtl .swiper-button-prev:after {
+    content: '\f054';
+}
+
+/* Testmoinal arrow */
+.testmonial .swiper-button-next:after,
+.testmonial .swiper-button-prev:after {
+    font-family: "Font Awesome 5 Free";
+    font-size: var(--swiper-navigation-size);
+    text-transform: none!important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    font-weight: 900;
+    font-size: 20px;
+}
+.testmonial .swiper-button-prev:after,
+.testmonial .swiper-rtl .swiper-button-next:after {
+    content: '\f30a';
+}
+.testmonial .swiper-button-next:after,
+.testmonial .swiper-rtl .swiper-button-prev:after {
+    content: '\f30b';
 }
 /*=============================================
 =           End Footer            =
@@ -1213,15 +1312,15 @@ ul.list.text {
     }
     .contact .btn {
         background-color: var(--second-color);
-        height: 55px;
-        width: 280px;
+        height: 50px;
+        width: 160px;
         border-radius: 18px;
-        line-height: 45px;
+        line-height: 25px;
         font-size: 16px;
         position: relative;
         display: block;
         overflow: hidden;
-        margin: 0;
+        margin: 10px 0;
         transition: var(--main-transition);
         -webkit-box-shadow: 0px 0px 13px -1px rgb(0 0 0 / 75%);
         -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.75);
@@ -1291,8 +1390,10 @@ ul.list.text {
         z-index: 999;
     }
     nav ul.navbar-nav.mr-auto {
-        margin: 50px 10px;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     .navbar li.nav-item {
         padding: 10px 13px;
@@ -1310,6 +1411,19 @@ ul.list.text {
     }
     .contact {
         height: auto;
+    }
+    .goals .img {
+        width: 350px;
+        height: 350px;
+        overflow: auto;
+        text-align: center;
+        margin: 20px auto;
+    }
+    .contact .btn {
+        margin: 10px auto;
+    }
+    .social.menu {
+        text-align: right;
     }
 }
 
@@ -1393,8 +1507,10 @@ ul.list.text {
         z-index: 999;
     }
     nav ul.navbar-nav.mr-auto {
-        margin: 50px 10px;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     nav .nav-item a {
         color: var(--white-color) !important;
@@ -1479,6 +1595,13 @@ ul.list.text {
         text-decoration: none;
         font-size: 12px;
     }
+    .goals .img {
+        width: 350px;
+        height: 350px;
+        overflow: auto;
+        text-align: center;
+        margin: 20px auto;
+    }
     .footer .menu {
         margin: 50px 0 15px;
     }
@@ -1544,6 +1667,12 @@ ul.list.text {
         background: var(--second-color);
         transition: 0.7s;
     }
+    .contact .btn {
+        margin: 10px auto;
+    }
+    .social.menu {
+        text-align: right;
+    }
 }
 
 @media (min-width:320px) and (max-width:576px) {
@@ -1598,11 +1727,11 @@ ul.list.text {
         right: 39%;
     }
     .goals .img {
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
         overflow: auto;
         text-align: center;
-        margin: 10px auto;
+        margin: 20px auto;
     }
     .goals .img img {
         width: 100%;
@@ -1618,13 +1747,13 @@ ul.list.text {
         margin: 30px 0;
     }
     .org .items .icon {
-        width: 105px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         position: relative;
     }
     .org .items .icon img {
-        width: 55px;
-        height: 55px;
+        width: 45px;
+        height: 45px;
     }
     .org .items .icon::before {
         content: "1";
@@ -1766,8 +1895,10 @@ ul.list.text {
         z-index: 999;
     }
     nav ul.navbar-nav.mr-auto {
-        margin: 50px 10px;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     .navbar li.nav-item {
         padding: 10px 13px;
@@ -1800,7 +1931,10 @@ ul.list.text {
         line-height: 1.9;
         width: 100%;
     }
-   
+    .testmonial:after {
+        content: "";
+        height: 120px;
+    }
     .testmonial .swiper-slide.swiper-slide-active {
         height: 130px;
         position: relative;
@@ -1814,7 +1948,7 @@ ul.list.text {
         background-color: var(--second-color);
         margin: 30px 0;
         position: relative;
-        top: -80px;
+        top: -90px;
         z-index: 9;
         padding: 0 0 40px 0;
         box-shadow: 0px -30px 25px 10px rgb(10 10 53);
@@ -1889,6 +2023,10 @@ ul.list.text {
         background: var(--second-color);
         transition: 0.7s;
     }
+    .contact .btn {
+        margin: 10px auto;
+    }
+    .social.menu {
+        text-align: right;
+    }
 }
-
-

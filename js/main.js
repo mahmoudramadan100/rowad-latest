@@ -90,6 +90,8 @@
 
 
 const navbar = document.querySelector('.navbar');
+const scrollBtn = document.querySelector('.scroll-top');
+
 window.onscroll = () => {
     if (window.scrollY > 300) {
         navbar.classList.add('navbar-scroll');
