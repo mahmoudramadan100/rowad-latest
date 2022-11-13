@@ -1213,6 +1213,7 @@ ul.list.text {
     -moz-transition: 0.5s all;
     -ms-transition: 0.5s all;
     -o-transition: 0.5s all;
+    display: none;
 }
 .scroll-top:focus,
 .scroll-top:hover {
@@ -1227,7 +1228,24 @@ ul.list.text {
     background-color: var(--main-color);
     color: var(--second-color);
 }
-
+.scroll-top-show {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+    background-color: #414648;
+    color: var(--white-color);
+    cursor: pointer;
+    padding: 10px;
+    line-height: 10px;
+    border-radius: 50%;
+    border-color: transparent;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: block;
+}
 
 /* client arrow */
 
@@ -1278,11 +1296,11 @@ ul.list.text {
     
     .header {
         position: relative;
-        height: 750px;
+        height: 90vh;
         background-color: rgba(0, 0, 0, 0.9) !important;
     }
     nav .navbar-brand {
-        margin-right: 230px;
+        margin-right: 430px;
         height: 120px;
         width: 140px;
         background: var(--white-color);
@@ -1292,9 +1310,19 @@ ul.list.text {
         justify-content: center;
         align-items: center;
     }
+    .header .layer {
+        height: 80%;
+    }
     .header .swiper-container {
         width: 100%;
         height: 100%;
+    }
+    .goals .img {
+        max-width: 400px;
+        max-height: 400px;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-left: 0;
     }
     .org .svg-line {
         position: absolute;
@@ -1394,6 +1422,8 @@ ul.list.text {
         justify-content: center;
         align-items: center;
         width: 100%;
+        height: 100%;
+        background: rgba(0,0,00.9);
     }
     .navbar li.nav-item {
         padding: 10px 13px;
@@ -1511,6 +1541,8 @@ ul.list.text {
         justify-content: center;
         align-items: center;
         width: 100%;
+        height: 100%;
+        background: rgba(0,0,00.9);
     }
     nav .nav-item a {
         color: var(--white-color) !important;
@@ -1612,11 +1644,11 @@ ul.list.text {
         padding: 10px 13px;
     }
     .testmonial .swiper-button-prev, .testmonial .swiper-rtl .swiper-button-next {
-        left: 20%;
+        left: 0;
         right: auto;
     }
     .testmonial .swiper-button-next, .testmonial .swiper-rtl .swiper-button-prev {
-        right: 5%;
+        right: 0;
         left: auto;
     }
     .contact {
@@ -1632,7 +1664,7 @@ ul.list.text {
         background-size: cover;
         background-position: center;
         overflow: hidden;
-        left: 40px;
+        left: 0;
         position: absolute;
         bottom: -55px;
         z-index: 99;
@@ -1672,6 +1704,71 @@ ul.list.text {
     }
     .social.menu {
         text-align: right;
+    }
+    .header .text span {
+        color: var(--white-color);
+        font-size: 15px;
+        display: block;
+        margin: 10px 0 30px;
+    }
+    .header .text p {
+        font-size: 16px;
+        color: var(--main-color);
+        line-height: 10px;
+    }
+    .header .text h1 {
+        color: var(--white-color);
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 18px;
+        padding: 20px 0;
+    }
+    .testmonial .swiper-slide.swiper-slide-active {
+        transform: scale(1.2) !important;
+        z-index: 9;
+        width: 100% !important;
+        margin-right: 20px;
+        height: auto;
+        overflow: hidden;
+    }
+    .org .item {
+        margin-top: 20px;
+    }
+    .org .items .icon {
+        width: 90px;
+        height: 90px;
+        position: relative;
+    }
+    .org .items .icon img {
+        width: 45px;
+        height: 45px;
+    }
+    nav .navbar-brand {
+        margin-right: 0;
+        height: 80px;
+        width: 90px;
+        background: var(--white-color);
+        text-align: center;
+        border-radius: 1px 1px 50% 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav .nav-item a:hover {
+        color: #fff!important;
+        transition: var(--main-transition);
+    }
+    .contact .text {
+        text-align: center;
+    }
+    .contact h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 35%;
+        height: 4px;
+        width: 140px;
+        background-color: var(--second-color);
     }
 }
 
@@ -1727,8 +1824,8 @@ ul.list.text {
         right: 39%;
     }
     .goals .img {
-        width: 350px;
-        height: 350px;
+        max-width: 250px;
+        max-height: 250px;
         overflow: auto;
         text-align: center;
         margin: 20px auto;
@@ -1745,6 +1842,9 @@ ul.list.text {
     }
     .org .items-1, .org .items-2, .org .items-3, .org .items-4 {
         margin: 30px 0;
+    }
+    .org .item {
+        margin-top: 20px;
     }
     .org .items .icon {
         width: 90px;
@@ -1811,7 +1911,7 @@ ul.list.text {
     }
     .header .layer {
         height: 200px;
-        left: 40px;
+        left: 0;
     }
     .header .wave {
         width: 100%;
@@ -1821,7 +1921,8 @@ ul.list.text {
         z-index: 9;
     }
     .header .swiper-slide .text {
-        text-align: center; 
+        text-align: center;
+        margin: 0;
     }
     .header .swiper-button-next, .header .swiper-button-prev {
         padding: 18px;
@@ -1841,8 +1942,8 @@ ul.list.text {
     }
     nav .navbar-brand {
         margin-right: 0;
-        height: 85px;
-        width: 125px;
+        height: 70px;
+        width: 90px;
     }
     .navbar-scroll {
         position: fixed;
@@ -1899,7 +2000,10 @@ ul.list.text {
         justify-content: center;
         align-items: center;
         width: 100%;
+        height: 100%;
+        background: rgba(0,0,00.9);
     }
+
     .navbar li.nav-item {
         padding: 10px 13px;
     }
@@ -1943,6 +2047,7 @@ ul.list.text {
     .testmonial .swiper .swiper-slide-active ~ .swiper-slide,
      .testmonial .swiper-slide {
         height: 280px;
+        width: 100%;
     }
     .client {
         background-color: var(--second-color);
@@ -2028,5 +2133,62 @@ ul.list.text {
     }
     .social.menu {
         text-align: right;
+    }
+    .header .text span {
+        color: var(--white-color);
+        font-size: 14px;
+        display: block;
+        margin: 10px 0 30px;
+    }
+    .header .text p {
+        font-size: 15px;
+        color: var(--main-color);
+        line-height: 10px;
+    }
+    .header .text h1 {
+        color: var(--white-color);
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 18px;
+        padding: 20px 0;
+    }
+    .testmonial {
+        margin: 60px 0 0;
+    }
+    .testmonial .swiper-slide.swiper-slide-active {
+        transform: scale(1.2) !important;
+        z-index: 9;
+        width: 100% !important;
+        margin: 20px;
+        height: 440px !important;
+        overflow: hidden;
+        height: 130px;
+        position: relative;
+        top: 70px;
+    }
+    .testmonial .swiper-slide.swiper-slide-active img {
+        object-fit: contain;
+        height: 350px !important;
+    }
+    .testmonial .swiper img {
+        height: 100%;
+        width: 95% !important;
+        object-fit: cover;
+    }
+    nav .nav-item a:hover {
+        color: #fff!important;
+        transition: var(--main-transition);
+    }
+    .contact .text {
+        text-align: center;
+    }
+    .contact h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 30%;
+        height: 4px;
+        width: 140px;
+        background-color: var(--second-color);
     }
 }
